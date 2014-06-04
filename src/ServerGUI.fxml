@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.*?>
+
+<fx:root type="javafx.scene.layout.AnchorPane" prefHeight="347.0000999999975" prefWidth="549.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Servidor">
+  <children>
+    <TabPane layoutX="-1.0" layoutY="0.0" prefHeight="347.0001220703125" prefWidth="549.0001220703125" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab style="-fx-padding: 5 10 5 10;&#10;-fx-font-family: &quot;Helvetica&quot;;&#10;-fx-font-size: 12px;&#10;-fx-font-weight: bold;&#10;-fx-background-color: linear-gradient(#232723 0%, #fff 25%, #fff 75%, #232723 100%);&#10;-fx-background-radius: 15;&#10;&#10;" text="Conexão">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #c3c4c4;">
+              <children>
+                <Label alignment="CENTER" layoutX="89.0" layoutY="23.0" prefHeight="28.0" prefWidth="372.0" text="Servidor" textAlignment="LEFT" wrapText="true">
+                  <font>
+                    <Font name="System Bold" size="18.0" />
+                  </font>
+                </Label>
+                <Label layoutX="25.0" layoutY="51.0" text="Configuração inicial:">
+                  <font>
+                    <Font size="14.0" fx:id="x1" />
+                  </font>
+                </Label>
+                <Label layoutX="26.0" layoutY="78.0" text="Porta:">
+                  <font>
+                    <Font size="15.0" fx:id="x2" />
+                  </font>
+                </Label>
+                <TextField fx:id="tfPorta" layoutX="82.0" layoutY="76.0" prefWidth="63.0" />
+                <Button fx:id="btnStartServer" layoutX="325.0" layoutY="76.0" mnemonicParsing="false" onAction="#btnStartServerOnAction" prefHeight="22.0" style="-fx-text-fill: white;&#10;&#9;-fx-padding: 5 10 5 10;&#10;&#9;-fx-font-family: &quot;Helvetica&quot;;&#10;&#9;-fx-font-size: 12px;&#10;&#9;-fx-font-weight: bold;&#10;&#9;-fx-background-color: linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%);&#10;&#9;-fx-background-insets: 0;&#10;&#9;-fx-background-radius: 9;" text="Iniciar Servidor">
+                  <font>
+                    <Font size="13.0" />
+                  </font>
+                </Button>
+                <Label font="$x1" layoutX="14.0" layoutY="263.0" text="Status:" />
+                <Label fx:id="lblStatus" layoutX="71.0" layoutY="263.0" prefWidth="300.0" text="">
+                  <font>
+                    <Font name="System Bold" size="14.0" />
+                  </font>
+                </Label>
+                <Text font="$x2" layoutX="26.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pasta para Armazenamento" />
+                <ComboBox fx:id="cbPasta" layoutX="25.0" layoutY="138.0" prefWidth="209.17236328125" value="arquivos">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="arquivos" />
+                      <String fx:value="imagem" />
+                      <String fx:value="video" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <Label fx:id="lblData" layoutX="21.0" layoutY="230.0" text="" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab style="-fx-padding: 5 10 5 10;&#10;-fx-font-family: &quot;Helvetica&quot;;&#10;-fx-font-size: 12px;&#10;-fx-font-weight: bold;&#10;-fx-background-color: linear-gradient(#232723 0%, #fff 25%, #fff 75%, #232723 100%);&#10;-fx-background-radius: 15;&#10;&#10;" text="Video">
+          <content>
+            <AnchorPane id="Content" maxHeight="-1.0" maxWidth="-1.0" minHeight="0.0" minWidth="0.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-border-width: 4px;&#10;-fx-border-style: solid;&#10;-fx-border-color: black;">
+              <MediaView fx:id="mvVideo" fitHeight="250.3419118046449" fitWidth="450.947021484375" style="" x="0.0" y="0.0" AnchorPane.bottomAnchor="68.66" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="65.05" AnchorPane.topAnchor="-10.0" />
+              <padding>
+                <Insets right="6.0" top="20.0" />
+              </padding>
+              <Button fx:id="btnPausar" layoutX="38.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnPausarOnAction" style="-fx-text-fill: white;&#10;&#9;-fx-padding: 5 10 5 10;&#10;&#9;-fx-font-family: &quot;Helvetica&quot;;&#10;&#9;-fx-font-size: 12px;&#10;&#9;-fx-font-weight: bold;&#10;&#9;-fx-background-color: linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%);&#10;&#9;-fx-background-insets: 0;&#10;&#9;-fx-background-radius: 15;" text="Pausar" />
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</fx:root>
